@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "DeleteConfirmation";
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+@model WebApplication1.activity
+
+<h2>Confirm Deletion</h2>
+<p>Are you sure you want to delete the activity with title: @Model.title?</p>
+
+@using (Html.BeginForm("DeleteActivity", "Home", new { id = Model.activityId }, FormMethod.Post))
+{
+    <input type="submit" value="Yes, Delete" />
+}
+
+<a href="javascript:history.back()">Cancel</a>
+
+

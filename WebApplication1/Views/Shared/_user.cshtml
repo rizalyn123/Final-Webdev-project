@@ -1,0 +1,111 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/assets/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>eStartup Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../../Content/assets/img/favicon.png" rel="icon">
+    <link href="../../Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../Content/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../../Content/assets/css/style.css" rel="stylesheet">
+    <link href="../../Content/assets/css/loginsignup.css" rel="stylesheet">
+    <link href="../../Content/assets/css/userstyle.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: eStartup
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="../../Content/assets/vendor/aos/aos.js"></script>
+    <script src="../../Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Content/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../../Content/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../../Content/assets/js/main.js"></script>
+
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div id="logo">
+                <h1><a href="index.html"><span>reminder</span>List</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li>@Html.ActionLink("Show Activity", "Display", "Home")</li>
+                    <li>@Html.ActionLink("Add Activity", "formtoadd", "Home")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Home", null, new { style = "font-weight: bold; text-decoration: underline" })</li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!--   <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">-->
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

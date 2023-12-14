@@ -1,0 +1,98 @@
+﻿@model WebApplication1.activity
+@{
+    ViewBag.Title = "EditActivity";
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+<style>
+
+    .editform{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+       
+    }
+
+    .input-value {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border: 1px solid black;
+        padding: 5%;
+        border: 1px solid black;
+    }
+
+    .label{
+        padding: 20px
+        width: 100%;
+        margin-left: 12px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    .btn {
+        padding: 10px;
+        width: 100%;
+        margin-left: 12px;
+        margin-top: 20px;
+        background-color:#7c986f ;
+    }
+
+    h2 {
+        text-align: center;
+    }
+</style>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="editform">
+
+
+
+
+    <div class="input-value">
+
+        <h2>Edit Activity</h2>
+
+        @using (Html.BeginForm("UpdateActivity", "Home", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.activityId) <!-- To retain the activityId -->
+
+            <div class="label">
+                <label>Title:</label>
+                @Html.TextBoxFor(model => model.title)
+            </div>
+
+            <div class="label">
+                <label>Time:</label>
+                @Html.TextBoxFor(model => model.time)
+            </div>
+
+            <div class="label">
+                <label>Date:</label>
+                @Html.TextBoxFor(model => model.date)
+            </div>
+
+            <div class="label">
+                <label>Location:</label>
+                @Html.TextBoxFor(model => model.location)
+            </div>
+
+            <div class="label">
+                <label>Ootd:</label>
+                @Html.TextBoxFor(model => model.ootd)
+            </div>
+
+
+            <input class="btn" type="submit" value="Save Changes" />
+
+        }
+
+        <a href="javascript:history.back()">Cancel</a>
+    </div>
+</div>

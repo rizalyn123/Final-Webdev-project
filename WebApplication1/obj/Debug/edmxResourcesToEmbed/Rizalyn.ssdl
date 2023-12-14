@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="friendsModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="roles_table">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="users_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="roleID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="friendsModel2StoreContainer">
+    <EntitySet Name="roles_table" EntityType="Self.roles_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users_table" EntityType="Self.users_table" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

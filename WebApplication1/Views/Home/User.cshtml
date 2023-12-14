@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+
+<br><br><br><br><br><br><br><br><br>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+    .unique {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border: 1px solid black;
+        padding:5%;
+    }
+
+        .form-field input {
+            padding: 10px;
+            width: 100%;
+            margin-left: 12px;
+        }
+
+        .inputs{
+            display:flex;
+            justify-content:center;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100%;
+            margin-left: 12px;
+            background-color: lightskyblue;
+        }
+</style>
+
+<body>
+
+
+<div class="unique">
+   
+    <form action="addActivity" method="post" class="form-field">
+        <h1>Add Activity Area</h1><br><br>
+
+        <div class="inputs">
+            <input type="text" name="title" placeholder="title" required><br>
+            <input type="date" name="date" placeholder="date" required><br>
+            <input type="time" name="time" placeholder="time" required><br>
+            <input type="text" name="location" placeholder="location" required><br>
+            <input type="text" name="ootd" placeholder="ootd" required><br>
+            <input class="btn" type="submit" value="Save"><br>
+        </div>
+
+    </form>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

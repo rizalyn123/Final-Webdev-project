@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_admin.cshtml";
+    var userList = (IEnumerable<user>)ViewData["UserList"];
+}
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<style>
+    .tables {
+        display: flex;
+        justify-content: center;
+    }
+
+    td, th {
+        padding: 20px;
+        border: 1px solid black;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .btn {
+        align-items: center;
+        width: 100vw;
+        margin-top: 15px;
+    }
+
+    button {
+        outline: none;
+        background-color: #71c55d;
+        border: none;
+        padding: 15px;
+        color: black;
+    }
+</style>
+
+<h1>Registered Users</h1>
+<div class="tables">
+    <table border="1">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>EmailAddress</th>
+            <th>Password</th>
+            <th>Actions to Delete</th>
+
+        </tr>
+        @{
+            foreach (var item in userList)
+            {
+                <tr>
+                    <td style="padding: 20px; text-align:center" ;>@item.firstname</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.lastname</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.email</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.password</td>
+                    <td style="padding: 20px; text-align:center" ;><a href="@Url.Action("DeleteUser", "Home", new { id = item.userId })">Delete</a></td>
+                </tr>
+                ;
+            }
+        }
+    </table>
+
+</div>
+
+
+

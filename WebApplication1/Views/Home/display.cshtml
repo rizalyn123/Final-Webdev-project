@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "display";
+    Layout = "~/Views/Shared/_user.cshtml";
+    var activityList = (IEnumerable<activity>)ViewData["ActivityList"];
+}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<style>
+    .tables {
+        display: flex;
+        justify-content: center;
+    }
+
+    td, th {
+        padding: 20px;
+        border: 1px solid black;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .btn{
+        align-items:center;
+        width: 100vw;
+        margin-top: 15px;
+        margin-bottom: 20%;
+    }
+
+    button {
+        outline: none;
+        background-color: #71c55d;
+        border: none;
+        padding: 15px;
+        color: black;
+        border-radius: 5px;
+    }
+
+    td .delete{
+        background-color: red;
+        padding: 10px;
+        border-radius: 3px;
+        color:white;
+    }
+
+    td .delete:hover {
+        color: red;
+    }
+
+    td .edit {
+        background-color: lightblue;
+        padding: 10px;
+        border-radius: 3px;
+        color: white;
+    }
+
+        td .edit:hover {
+            color: lightblue;
+        }
+
+</style>
+
+<h1>Show activity</h1>
+<div class="tables">
+    <table border="1">
+        <tr>
+            <th>Title of the Activity</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>What to wear ?</th>
+            <th>Actions to Edit</th>
+            <th>Actions to Delete</th>
+
+        </tr>
+        @{
+            foreach (var item in activityList)
+            {
+
+                <tr>
+                    <td style="padding: 20px; text-align:center" ;>@item.title</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.time</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.date</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.location</td>
+                    <td style="padding: 20px; text-align:center" ;>@item.ootd</td>
+                    <td style="padding: 20px; text-align:center" ;><a class="edit" href="@Url.Action("EditActivity", "Home", new { id = item.activityId })">Edit</a></td>
+                    <td style="padding: 20px; text-align:center" ;><a class="delete" href="@Url.Action("DeleteActivity", "Home", new { id = item.activityId })">Delete</a></td>
+                </tr>
+                ;
+            }
+        }
+    </table>
+
+
+
+</div>
+
+<div class="btn">
+    <button>@Html.ActionLink("Add Activity", "formtoadd", "Home", new { style = "colo: white; text-decoration: none" })</button>
+</div>
