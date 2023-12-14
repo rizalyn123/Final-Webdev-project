@@ -55,6 +55,14 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+
+        public ActionResult userDashboard()
+        {
+            ViewBag.Message = "Your register page.";
+
+            return View();
+        }
+
         public ActionResult Admin()
         {
             accountEntities1 ae = new accountEntities1();
@@ -142,7 +150,7 @@ namespace WebApplication1.Controllers
                     Session["lastname"] = authenticatedUser.lastname;
                     Session["userId"] = authenticatedUser.userId;
                     //  ViewData["admin"] = authenticatedUser;
-                    return RedirectToAction("display");
+                    return RedirectToAction("userDashboard");
                 }
                 else if (authenticatedUser.roleId == 1)
                 {
@@ -263,7 +271,10 @@ namespace WebApplication1.Controllers
             accountEntities1 ae = new accountEntities1();
 
             // Fetch the activity from the database based on the provided id
-            user userToDelete = ae.users.Find(id);
+            user userToDelete = (from a in ae.users
+                                 where a.userId == id
+                                 select a).FirstOrDefault();
+
 
             // Check if the activity exists
             if (userToDelete == null)

@@ -329,6 +329,7 @@
     <Content Include="Views\Home\DeleteConfirmation.cshtml" />
     <Content Include="Views\Shared\_admin.cshtml" />
     <Content Include="Views\Home\adminDashboard.cshtml" />
+    <Content Include="Views\Home\userDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

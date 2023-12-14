@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "userDashboard";
+    Layout = "~/Views/Shared/_user.cshtml";
+
+    var firstname = Session["firstname"] as string;
+    var lastname = Session["lastname"] as string;
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+
+    .outer {
+        display: flex;
+        height: 100vh;
+        width: 100;
+        justify-content: center;
+        margin-bottom: 18%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+        margin-top: 1%;
+        margin-bottom: 5%;
+    }
+
+        .icon {
+    width: 50%; /* Set your desired width */
+    height: 20%; /* Set your desired height */
+   
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+    .square {
+        display:flex;
+        justify-content:center;
+        flex-direction: column;
+        width: 200px; /* Set your desired width */
+        height: 200px; /* Set your desired height */
+        border: 1px solid black;
+        padding: 15px;
+        border-radius: 4px;
+       
+    }
+
+        .square i {
+            font-size: 200%;
+            color: #71C55D;
+            padding-bottom: 10px;
+        }
+
+        .square h1 {
+            font-size: 20px;
+        }
+
+</style>
+<div class="outer">
+    <div class="inner">
+        <h1>Welcome! @firstname</h1><br>
+        <h2>Here's what you can do: </h2>
+
+    </div>
+    <div class="icon">
+
+        <div class="square">
+            <i class="fa-solid fa-list"></i>
+            <h1>List Activity</h1>
+
+        </div>
+        <div class="square">
+            <i class="fa-solid fa-trash"></i>
+            <h1>Delete Activity</h1>
+
+        </div>
+        <div class="square">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h1>Edit Activity</h1>
+
+        </div>
+
+    </div>
+
+</div>
+
